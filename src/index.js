@@ -1,7 +1,8 @@
-import { h, render } from 'preact';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+// eslint-disable-next-line no-unused-vars
+import { h, render } from 'preact'
+import App from './App'
+import registerServiceWorker from './registerServiceWorker'
+import './index.css'
 
-render(<App />, document.getElementById('root'));
-registerServiceWorker();
+render(<App />, document.getElementById('root'))
+registerServiceWorker()

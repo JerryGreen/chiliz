@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import { h, Component } from 'preact'
 import moment from 'moment'
 
@@ -6,7 +7,7 @@ import logo from './logo.svg'
 import './App.css'
 
 class App extends Component {
-  render() {
+  render () {
     const odd = moment().isoWeek() % 2 === 1
     // const chiliz = odd ? 'Нечет' : 'Чет'
     const chiliz = odd ? 'Числитель' : 'Знаменатель'
