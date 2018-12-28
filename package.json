@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "dependencies": {
     "@just-boris/preact-scripts": "1.1.4",
-    "babel-plugin-react-css-modules": "5.0.0",
     "moment": "2.23.0",
     "preact": "8.4.2",
     "preact-compat": "3.18.4"
