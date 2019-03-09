@@ -13,3 +13,14 @@ echo '# override envs here' > .env.local
 yarn
 yarn start
 ```
+
+# Deploy
+
+`master` branch
+
+```
+yarn build
+git add .
+git commit
+git push
+```
