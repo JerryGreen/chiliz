@@ -1,6 +1,6 @@
 {
   "name": "chiliz",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "dependencies": {
     "@just-boris/preact-scripts": "1.1.4",
     "moment": "2.23.0",
