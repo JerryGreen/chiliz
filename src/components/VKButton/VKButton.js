@@ -6,9 +6,11 @@ import './VKButton.css'
 const VKButton = () => {
   return (
     <a className='VKButton' href='http://chiliz.ru/' target='_blank'>
-      <div className='VKButtonLogo' />
-      <div className='VKButtonText'>Рассказать одногруппникам</div>
-      {/* <div className='VKButtonCounter'>53</div> */}
+      <div className='VKButtonLeftPart'>
+        <div className='VKButtonLogo' />
+        <div className='VKButtonText'>Рассказать одногруппникам</div>
+      </div>
+      <div className='VKButtonCounter'>53</div>
     </a>
   )
 }
