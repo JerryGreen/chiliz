@@ -24,9 +24,10 @@ const App = () => {
   const title = `На этой неделе "${chiliz}"! (${startDay} - ${endDay})`
   return (
     <div className='App'>
+      <a className='contact' href='https://vk.com/write25053099' target='_blank'>Обратная связь</a>
       { !reminderClosedAt &&
         <div className='topHint' onClick={onClose}>
-          <div>С прошлого года сайт сломался и всегда показывал противоположное значение. Теперь правильно ;) </div>
+          <div>С прошлого года сайт сломался и всегда показывал противоположное значение. Будьте внимательны - теперь правильно ;) </div>
           <div className='topHintClose'>(Закрыть)</div>
         </div>
       }
