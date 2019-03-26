@@ -4,7 +4,7 @@
   "dependencies": {
     "@just-boris/preact-scripts": "1.1.4",
     "moment": "2.23.0",
-    "preact": "8.4.2",
+    "preact": "10.0.0-alpha.1",
     "preact-compat": "3.18.4",
     "query-string": "6.4.0"
   },
