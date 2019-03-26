@@ -3,18 +3,30 @@ import { h, Component } from 'preact'
 import moment from 'moment'
 import VKButton from 'components/VKButton/VKButton'
 
+import urpc from 'assets/urpc.png'
 import './App.css'
+
+const { REACT_APP_DOMAIN_URL } = process.env
+const image = new window.URL(urpc, window.location.origin)
 
 const App = () => {
   const odd = moment().isoWeek() % 2 === 1
-  const chiliz = odd ? 'Числитель' : 'Знаменатель'
+  const chiliz = odd ? 'числитель' : 'знаменатель'
+  const startDay = moment().weekday(1).format('DD/MM')
+  const endDay = moment().weekday(7).format('DD/MM')
+  const title = `На этой неделе "${chiliz}"! (${startDay} - ${endDay})`
   return (
     <div className='App'>
       <div className='chiliz'>
         <div className='subtitle'>На этой неделе...</div>
         <div className='title'>{chiliz}</div>
         <div className='share'>
-          <VKButton />
+          <VKButton
+            url={REACT_APP_DOMAIN_URL}
+            title={title}
+            image={image}
+            noparse
+          />
         </div>
       </div>
       <div className='hint'>
