@@ -1,0 +1,24 @@
+.VKButton {
+  display: flex;
+  align-items: center;
+  height: 22px;
+  border-radius: 2px;
+  background-color: #45668e;
+  color: white;
+  text-decoration: none;
+  width: 191px;
+}
+
+.VKButtonLogo {
+  background-size: 19px 59px;
+  background-image: url(http://vk.com/images/icons/like_widget_2x.png);
+  height: 8px;
+  width: 16px;
+  margin: 0 5px;
+  /* widht: 26px; */
+}
+
+.VKButtonText {
+  /* width: 165px; */
+  padding: 2px 0 4px;
+}

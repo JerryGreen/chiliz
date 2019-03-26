@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import { h, Component } from 'preact'
 import moment from 'moment'
+import VKButton from 'components/VKButton/VKButton'
 
 import './App.css'
 
@@ -10,9 +11,12 @@ class App extends Component {
     const chiliz = odd ? 'Числитель' : 'Знаменатель'
     return (
       <div className='App'>
-        <p className='App-intro'>
+        <div className='chiliz'>
           <div>{chiliz}</div>
-        </p>
+        </div>
+        <div className='share'>
+          <VKButton />
+        </div>
       </div>
     )
   }
