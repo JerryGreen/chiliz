@@ -5,21 +5,19 @@ import VKButton from 'components/VKButton/VKButton'
 
 import './App.css'
 
-class App extends Component {
-  render () {
-    const odd = moment().isoWeek() % 2 === 1
-    const chiliz = odd ? 'Числитель' : 'Знаменатель'
-    return (
-      <div className='App'>
-        <div className='chiliz'>
-          <div>{chiliz}</div>
-        </div>
-        <div className='share'>
-          <VKButton />
-        </div>
+const App = () => {
+  const odd = moment().isoWeek() % 2 === 1
+  const chiliz = odd ? 'Числитель' : 'Знаменатель'
+  return (
+    <div className='App'>
+      <div className='chiliz'>
+        <div>{chiliz}</div>
       </div>
-    )
-  }
+      <div className='share'>
+        <VKButton />
+      </div>
+    </div>
+  )
 }
 
 export default App
