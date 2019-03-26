@@ -8,6 +8,7 @@ const VKButton = () => {
     <a className='VKButton' href='http://chiliz.ru/' target='_blank'>
       <div className='VKButtonLogo' />
       <div className='VKButtonText'>Рассказать одногруппникам</div>
+      {/* <div className='VKButtonCounter'>53</div> */}
     </a>
   )
 }

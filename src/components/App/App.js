@@ -11,10 +11,14 @@ const App = () => {
   return (
     <div className='App'>
       <div className='chiliz'>
-        <div>{chiliz}</div>
+        <div className='subtitle'>На этой неделе...</div>
+        <div className='title'>{chiliz}</div>
+        <div className='share'>
+          <VKButton />
+        </div>
       </div>
-      <div className='share'>
-        <VKButton />
+      <div className='hint'>
+        Данные обновляются в 00:00 с наступлением понедельника, используется время на вашем устройстве
       </div>
     </div>
   )
