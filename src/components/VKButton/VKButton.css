@@ -1,0 +1,60 @@
+.VKButton {
+  display: flex;
+  align-items: center;
+  height: 22px;
+  color: white;
+  text-decoration: none;
+}
+
+.VKButtonLeftPart {
+  display: flex;
+  align-items: center;
+  width: 191px;
+  height: 100%;
+  border-radius: 2px;
+  background-color: #45668e;
+}
+
+.VKButtonLogo {
+  background-size: 19px 59px;
+  background-image: url(http://vk.com/images/icons/like_widget_2x.png);
+  height: 8px;
+  width: 16px;
+  margin: 0 5px;
+  /* widht: 26px; */
+}
+
+.VKButtonText {
+  /* width: 165px; */
+  padding: 2px 0 4px;
+}
+
+.VKButtonCounter {
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: #55677d;
+  height: 100%;
+
+  border: 1px solid #adbdcc;
+  background: #FFF;
+  font-size: 11px;
+  padding: 2px 5px;
+  margin-left: 8px;
+  color: #55677d;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+
+.VKButtonCounter::before {
+  content: '';
+  display: block;
+  background-size: 19px 59px;
+  background-image: url(http://vk.com/images/icons/like_widget_2x.png);
+  background-position: 0 -49px;
+  width: 5px;
+  height: 10px;
+  position: absolute;
+  left: -5px;
+  box-sizing: content-box;
+}
