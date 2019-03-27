@@ -3,6 +3,7 @@
   "version": "1.0.2",
   "dependencies": {
     "@just-boris/preact-scripts": "1.1.4",
+    "is-mobile": "2.0.0",
     "moment": "2.23.0",
     "preact": "10.0.0-alpha.1",
     "preact-compat": "3.18.4",
