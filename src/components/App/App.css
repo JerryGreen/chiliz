@@ -1,13 +1,9 @@
-.App {
+/* .App {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* align-items: center; */
-  /* align-content: space-around; */
-  /* align-content: stretch; */
-  /* align-content: flex-end; */
   height: 100vh;
-}
+} */
 
 .contact {
   position: absolute;
@@ -15,12 +11,6 @@
   left: 0;
   padding: 12px;
 }
-
-/* @media screen and (max-width: 800px) {
-  .contact {
-    display: none;
-  }
-} */
 
 .topHint {
   position: absolute;
@@ -33,6 +23,7 @@
   border-radius: 4px;
   background-color: #accaee;
   cursor: pointer;
+  z-index: 1;
 }
 
 .topHint > div {
@@ -46,10 +37,23 @@
 
 .chiliz {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.chilizWrapper {
+  display: flex;
   height: 60vh;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  /* justify-content: center; */
 }
 
 .hint {
