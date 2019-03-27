@@ -1,0 +1,16 @@
+{
+  "name": "lambda",
+  "version": "1.0.0",
+  "description": "AWS Lambda serverless function to get vk likes of chiliz",
+  "main": "index.js",
+  "author": "Jerry Green",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "2.3.0"
+  },
+  "scripts": {
+    "build": "sh build.sh",
+    "prerelease": "yarn build",
+    "release": "sh release.sh"
+  }
+}

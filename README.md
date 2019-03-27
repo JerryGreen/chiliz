@@ -1,12 +1,12 @@
 # Числитель или Знаменатель - [chiliz.ru](http://chiliz.ru/)
 Сайт, показывающий чётная ли или нечётная неделя, числитель или знаменатель. Полезно для учебных заведений, студентов
 
-# Requirements
+## Requirements
 
 * NodeJS 11.6.0
 * Yarn 1.12.3
 
-# Setup
+## Setup
 
 ```
 echo '# override envs here' > .env.local
@@ -14,7 +14,7 @@ yarn
 yarn start
 ```
 
-# Deploy
+## Deploy
 
 `master` branch
 
