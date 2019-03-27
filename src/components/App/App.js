@@ -24,23 +24,32 @@ const App = () => {
   const title = `На этой неделе "${chiliz}"! (${startDay} - ${endDay})`
   return (
     <div className='App'>
-      <a className='contact' href='https://vk.com/write25053099' target='_blank'>Обратная связь</a>
+      <a className='contact' href='https://vk.com/write25053099' target='_blank' rel='noopener noreferrer'>
+        Обратная связь
+      </a>
       { !reminderClosedAt &&
         <div className='topHint' onClick={onClose}>
-          <div>С прошлого года сайт сломался и всегда показывал противоположное значение. Будьте внимательны - теперь правильно ;) </div>
+          <div>
+            {
+              'С прошлого года сайт сломался и всегда показывал противоположное значение. \
+              Будьте внимательны - теперь правильно ;)'
+            }
+          </div>
           <div className='topHintClose'>(Закрыть)</div>
         </div>
       }
       <div className='chiliz'>
-        <div className='subtitle'>На этой неделе...</div>
-        <div className='title'>{chiliz}</div>
-        <div className='share'>
-          <VKButton
-            url={REACT_APP_DOMAIN_URL}
-            title={title}
-            image={image}
-            noparse
-          />
+        <div className='chilizWrapper'>
+          <div className='subtitle'>На этой неделе...</div>
+          <div className='title'>{chiliz}</div>
+          <div className='share'>
+            <VKButton
+              url={REACT_APP_DOMAIN_URL}
+              title={title}
+              image={image}
+              noparse
+            />
+          </div>
         </div>
       </div>
       <div className='hint'>
