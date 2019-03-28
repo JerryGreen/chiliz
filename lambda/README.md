@@ -3,6 +3,8 @@
 ## Requirements
 
 * [aws-cli](https://docs.aws.amazon.com/cli/latest/userguide/install-macos.html)
+* NodeJS v8.10.0
+* Yarn 1.12.3
 
 ## Setup
 

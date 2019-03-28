@@ -1,0 +1,23 @@
+{
+  "extends": ["standard", "standard-react"],
+  "parser": "babel-eslint",
+  "plugins": [
+    "react",
+    "flowtype"
+  ],
+  "env": {
+    "browser": true
+  },
+  "globals": {
+    "ReactClass": true,
+    "SyntheticInputEvent": true,
+    "NestedObject": true,
+    "Generator": true,
+    "T": true
+  },
+  "rules": {
+    "comma-dangle": [2, "always-multiline"],
+    "no-console": ["error", { "allow": ["warn", "error"] }],
+    "no-typos": "off"
+  }
+}
