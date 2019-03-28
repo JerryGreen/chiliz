@@ -1,6 +1,12 @@
-# Ignore node_modules
+# package directories
 node_modules
+jspm_packages
+
+# Serverless directories
+.serverless
 
 # Ignore any zip files
 *.zip
-build
+
+# Other
+yarn-error.log

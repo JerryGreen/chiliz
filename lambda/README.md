@@ -8,7 +8,7 @@
 
 ```
 yarn
-node index.js
+yarn start
 ```
 
 ## Deploy
@@ -18,8 +18,14 @@ yarn
 yarn release
 ```
 
+## Test
+
+1. `yarn test` to test locally
+2. `sls invoke -f getChilizVkLikes -l` after deploy to inspect lambda response
+
 ## API
 
 ```
-https://kfp7zu0p86.execute-api.eu-central-1.amazonaws.com/default/getChilizVkLikes
+https://p7o8ianrwi.execute-api.eu-central-1.amazonaws.com/default/getChilizVkLikes
+https://kfp7zu0p86.execute-api.eu-central-1.amazonaws.com/default/getChilizVkLikes (old, no serverless)
 ```
