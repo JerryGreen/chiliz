@@ -1,16 +1,17 @@
-/* global fetch */
-global.fetch = require('node-fetch')
+import { APIGatewayProxyHandler } from 'aws-lambda'
+import fetch from 'node-fetch'
+import 'source-map-support/register'
 
 const url = 'https://vk.com/share.php?act=count&url=http://chiliz.ru/'
 
-const handler = async (event, context, callback) => {
+export const handler: APIGatewayProxyHandler = async () => {
   const vkResponse = await fetch(url)
   const jsonpAnswer = await vkResponse.text()
   const likesCount = Number((jsonpAnswer.match(/VK\.Share\.count\(\d+, (\d+)/) || [])[1])
   const body = {
     likesCount
   }
-  const response = {
+  return {
     statusCode: 200,
     headers: {
       'Access-Control-Allow-Origin': '*'
@@ -18,7 +19,5 @@ const handler = async (event, context, callback) => {
     },
     body: JSON.stringify(body)
   }
-  return callback(null, response)
 }
-
 exports.handler = handler

@@ -8,7 +8,7 @@
 
 ```
 yarn
-node index.js
+yarn start
 ```
 
 ## Deploy
@@ -21,5 +21,6 @@ yarn release
 ## API
 
 ```
-https://kfp7zu0p86.execute-api.eu-central-1.amazonaws.com/default/getChilizVkLikes
+https://p7o8ianrwi.execute-api.eu-central-1.amazonaws.com/default/getChilizVkLikes
+https://kfp7zu0p86.execute-api.eu-central-1.amazonaws.com/default/getChilizVkLikes (old, no serverless)
 ```

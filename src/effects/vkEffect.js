@@ -1,9 +1,11 @@
 import { TYPES } from 'reducers/vkReducer'
 
+const { REACT_APP_BACKEND_URL } = process.env
+
 // const API_URL = 'https://kfp7zu0p86.execute-api.eu-central-1.amazonaws.com'
 // const SERVER_URL = 'default'
 // const LIKES_URL = 'getChilizVkLikes'
-const ENDPOINT = 'https://kfp7zu0p86.execute-api.eu-central-1.amazonaws.com/default/getChilizVkLikes'
+const ENDPOINT = `${REACT_APP_BACKEND_URL}/getChilizVkLikes`
 
 const vkEffect = async dispatch => {
   dispatch(TYPES.GET_COUNT_REQUEST)

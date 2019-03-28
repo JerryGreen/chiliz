@@ -2,15 +2,25 @@
   "name": "lambda",
   "version": "1.0.0",
   "description": "AWS Lambda serverless function to get vk likes of chiliz",
-  "main": "index.js",
+  "main": "index.ts",
   "author": "Jerry Green",
   "license": "MIT",
   "dependencies": {
-    "node-fetch": "2.3.0"
+    "node-fetch": "2.3.0",
+    "source-map-support": "0.5.11"
   },
   "scripts": {
-    "build": "sh build.sh",
-    "prerelease": "yarn build",
-    "release": "sh release.sh"
+    "start": "sls offline",
+    "deploy": "serverless deploy",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "8.10.23",
+    "@types/node": "11.12.0",
+    "serverless-offline": "4.9.2",
+    "serverless-webpack": "5.2.0",
+    "ts-loader": "5.3.3",
+    "typescript": "3.3.4000",
+    "webpack": "4.29.6"
   }
 }
