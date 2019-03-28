@@ -24,3 +24,7 @@ git add .
 git commit
 git push
 ```
+
+## Additional info
+
+* [Domains](wiki/domains.md)
