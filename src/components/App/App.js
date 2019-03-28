@@ -7,7 +7,7 @@ import VKButton from 'components/VKButton/VKButton'
 import urpc from 'assets/urpc.png'
 import './App.css'
 
-const { REACT_APP_DOMAIN_URL } = process.env
+// const { REACT_APP_DOMAIN_URL } = process.env
 const image = new window.URL(urpc, window.location.origin)
 
 const App = () => {
@@ -44,7 +44,7 @@ const App = () => {
           <div className='title'>{chiliz}</div>
           <div className='share'>
             <VKButton
-              url={REACT_APP_DOMAIN_URL}
+              url={'http://chiliz.ru/'}
               title={title}
               image={image}
               noparse
