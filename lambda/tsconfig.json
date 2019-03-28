@@ -3,6 +3,12 @@
     "lib": [
       "es2017"
     ],
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "src/*"
+      ]
+    },
     "moduleResolution": "node",
     "noUnusedLocals": true,
     "noUnusedParameters": true,

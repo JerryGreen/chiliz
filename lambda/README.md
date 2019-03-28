@@ -18,6 +18,11 @@ yarn
 yarn release
 ```
 
+## Test
+
+1. `yarn test` to test locally
+2. `sls invoke -f getChilizVkLikes -l` after deploy to inspect lambda response
+
 ## API
 
 ```
