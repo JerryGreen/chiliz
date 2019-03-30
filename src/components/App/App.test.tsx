@@ -2,12 +2,19 @@
 import { h, render } from 'preact'
 import App from './App'
 
-const localStorageMock = {
-  getItem: jest.fn(),
-  setItem: jest.fn(),
-  clear: jest.fn()
+interface LocalStorageEmulator {
+  getItem: Function,
+  setItem: Function,
+  clear: Function,
 }
-global.localStorage = localStorageMock
+
+const localStorageMock = {
+  getItem: () => {},
+  setItem: () => {},
+  clear: () => {}
+}
+
+(global as any).localStorage = localStorageMock
 
 it('renders without crashing', () => {
   const div = document.createElement('div')

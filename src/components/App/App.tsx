@@ -1,7 +1,9 @@
 // eslint-disable-next-line no-unused-vars
-import { h, Component } from 'preact'
+// import * as React from 'preact'
+// import * as ReactDOM from 'preact'
+import { h } from 'preact'
 import { useState } from 'preact/hooks'
-import moment from 'moment'
+import * as moment from 'moment'
 import VKButton from 'components/VKButton/VKButton'
 
 import urpc from 'assets/urpc.png'
