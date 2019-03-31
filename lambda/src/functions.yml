@@ -1,0 +1,6 @@
+getChilizVkLikes:
+  handler: src/functions/getChilizVkLikes.handler
+  events:
+    - http:
+      method: get
+      path: getChilizVkLikes

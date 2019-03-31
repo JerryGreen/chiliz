@@ -22,4 +22,5 @@ export const getChilizVkLikes: APIGatewayProxyHandler = async () => {
     body: JSON.stringify(body)
   }
 }
+
 exports.handler = getChilizVkLikes
