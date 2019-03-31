@@ -2,17 +2,14 @@
 import { h } from 'preact'
 import { useReducer, useEffect } from 'preact/hooks'
 import queryString from 'query-string'
-import isMobile from 'ismobilejs'
-
-console.log('isMobile')
-console.log(isMobile)
+import * as isMobile from 'ismobilejs'
 
 import vkReducer from 'reducers/vkReducer'
 import vkEffect from 'effects/vkEffect'
 
 import './VKButton.css'
 
-const VK_URL = `${isMobile(navigator.userAgent).any ? 'vk' : 'https'}://vk.com/share.php`
+const VK_URL = `${isMobile.any ? 'vk' : 'https'}://vk.com/share.php`
 
 const VKButton = ({ url, title, image, noparse }) => {
   const params = queryString.stringify({ url, title, image, noparse })

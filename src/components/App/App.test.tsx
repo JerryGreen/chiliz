@@ -8,7 +8,7 @@ interface LocalStorageEmulator {
   clear: Function,
 }
 
-const localStorageMock = {
+const localStorageMock: LocalStorageEmulator = {
   getItem: () => {},
   setItem: () => {},
   clear: () => {}

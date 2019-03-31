@@ -6,7 +6,10 @@ import { useState } from 'preact/hooks'
 import * as moment from 'moment'
 import VKButton from 'components/VKButton/VKButton'
 
+// declare module '*.png'
+
 import urpc from 'assets/urpc.png'
+// import * as urpc from '../../assets/urpc.png'
 import './App.css'
 
 // const { REACT_APP_DOMAIN_URL } = process.env
