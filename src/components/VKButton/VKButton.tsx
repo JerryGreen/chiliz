@@ -1,11 +1,15 @@
 // eslint-disable-next-line no-unused-vars
 import { h } from 'preact'
-import { useReducer, useEffect } from 'preact/hooks'
-import queryString from 'query-string'
-import * as isMobile from 'ismobilejs'
+import {
+  useEffect,
+  useReducer
+} from 'preact/hooks'
 
-import vkReducer from 'reducers/vkReducer'
+import * as isMobile from 'ismobilejs'
+import * as queryString from 'query-string'
+
 import vkEffect from 'effects/vkEffect'
+import vkReducer from 'reducers/vkReducer'
 
 import './VKButton.css'
 

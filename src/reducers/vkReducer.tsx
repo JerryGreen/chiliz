@@ -1,8 +1,11 @@
 const TYPES = {
+  GET_COUNT_FAILURE: 'GET_COUNT_FAILURE',
   GET_COUNT_REQUEST: 'GET_COUNT_REQUEST',
   GET_COUNT_SUCCESS: 'GET_COUNT_SUCCESS',
-  GET_COUNT_FAILURE: 'GET_COUNT_FAILURE'
 }
+
+// enum TYPES {
+// }
 
 // const { REACT_APP_DOMAIN_URL } = process.env
 
@@ -10,12 +13,24 @@ const TYPES = {
 // const VK_URL = 'https://vk.com/share.php'
 // const endpoint = `${VK_URL}?act=count&url=${REACT_APP_DOMAIN_URL}`
 
-const vkReducer = (_state, action) => {
-  const { type, payload = {} } = action
+interface IState {
+  likesCount: number | null
+}
+
+interface IAction {
+  type: string | null,
+  payload: IState
+}
+
+const vkReducer = (state: IState, action: IAction) => {
+  const {
+    type,
+    payload
+  } = action
   switch (type) {
     case TYPES.GET_COUNT_FAILURE: {
-      const { error } = payload
-      console.error(new Error(error))
+      // const { error } = payload
+      // console.error(new Error(error))
       return {}
     }
     case TYPES.GET_COUNT_SUCCESS: {

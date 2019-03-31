@@ -2,8 +2,11 @@
 // import * as React from 'preact'
 // import * as ReactDOM from 'preact'
 import { h, render } from 'preact'
-import App from 'components/App'
+
+import App from 'components/App/App'
+
 import registerServiceWorker from './registerServiceWorker.js'
+
 import './index.css'
 
 // declare namespace JSX {

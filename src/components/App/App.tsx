@@ -1,15 +1,14 @@
 // eslint-disable-next-line no-unused-vars
 // import * as React from 'preact'
 // import * as ReactDOM from 'preact'
+import * as moment from 'moment'
 import { h } from 'preact'
 import { useState } from 'preact/hooks'
-import * as moment from 'moment'
+
 import VKButton from 'components/VKButton/VKButton'
 
-// declare module '*.png'
+import * as urpc from 'assets/urpc.png'
 
-import urpc from 'assets/urpc.png'
-// import * as urpc from '../../assets/urpc.png'
 import './App.css'
 
 // const { REACT_APP_DOMAIN_URL } = process.env
@@ -52,7 +51,7 @@ const App = () => {
               url={'http://chiliz.ru/'}
               title={title}
               image={image}
-              noparse
+              noparse={true}
             />
           </div>
         </div>
