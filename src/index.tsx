@@ -1,6 +1,3 @@
-// eslint-disable-next-line no-unused-vars
-// import * as React from 'preact'
-// import * as ReactDOM from 'preact'
 import { h, render } from 'preact'
 
 import App from 'components/App/App'

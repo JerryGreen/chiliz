@@ -1,24 +1,21 @@
-// eslint-disable-next-line no-unused-vars
-// import * as React from 'preact'
-// import * as ReactDOM from 'preact'
-import * as moment from 'moment'
+import moment from 'moment'
 import { h } from 'preact'
 import { useState } from 'preact/hooks'
 
 import VKButton from 'components/VKButton/VKButton'
 
-import * as urpc from 'assets/urpc.png'
+import urpc from 'assets/urpc.png'
 
 import './App.css'
 
 // const { REACT_APP_DOMAIN_URL } = process.env
-const image = new window.URL(urpc, window.location.origin)
+const image = new URL(urpc, window.location.origin).toString()
 
 const App = () => {
   const [reminderClosedAt, setreminderClosedAt] = useState(localStorage.getItem('reminderClosedAt'))
   const onClose = () => {
-    const now = window.Date.now()
-    window.localStorage.setItem('reminderClosedAt', now)
+    const now = Date.now().toString()
+    localStorage.setItem('reminderClosedAt', now)
     setreminderClosedAt(now)
   }
   const odd = moment().isoWeek() % 2 === 1

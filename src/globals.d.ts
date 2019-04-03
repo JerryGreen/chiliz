@@ -1,7 +1,7 @@
 declare module '*.png'
 
-interface Window {
-  Date?: any
-}
+// interface IWindow {
+//   Date?: any
+// }
 
-declare var window: Window
+// declare var window: IWindow

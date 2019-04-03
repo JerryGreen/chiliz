@@ -1,12 +1,11 @@
-// eslint-disable-next-line no-unused-vars
 import { h } from 'preact'
 import {
   useEffect,
   useReducer
 } from 'preact/hooks'
 
-import * as isMobile from 'ismobilejs'
-import * as queryString from 'query-string'
+import isMobile from 'ismobilejs'
+import queryString from 'query-string'
 
 import vkEffect from 'effects/vkEffect'
 import vkReducer from 'reducers/vkReducer'
@@ -15,7 +14,14 @@ import './VKButton.css'
 
 const VK_URL = `${isMobile.any ? 'vk' : 'https'}://vk.com/share.php`
 
-const VKButton = ({ url, title, image, noparse }) => {
+interface IVKButtonProps {
+  url: string,
+  title: string,
+  image: string,
+  noparse: boolean
+}
+
+const VKButton = ({ url, title, image, noparse }: IVKButtonProps) => {
   const params = queryString.stringify({ url, title, image, noparse })
   const href = `${VK_URL}?${params}`
   const [state, dispatch] = useReducer(vkReducer, { likesCount: null })

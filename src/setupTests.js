@@ -2,22 +2,22 @@
 global.SVGElement = global.Element
 
 var localStorageMock = (function() {
-  var store = {};
+  var store = {}
 
   return {
     getItem: function(key) {
-      return store[key] || null;
+      return store[key] || null
     },
     setItem: function(key, value) {
-      store[key] = value.toString();
+      store[key] = value.toString()
     },
     clear: function() {
-      store = {};
+      store = {}
     }
-  };
+  }
 
-})();
+})()
 
 Object.defineProperty(window, 'localStorage', {
   value: localStorageMock
-});
+})
