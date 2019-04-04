@@ -7,8 +7,8 @@ import {
 import isMobile from 'ismobilejs'
 import queryString from 'query-string'
 
-import vkEffect from 'effects/vkEffect'
-import vkReducer from 'reducers/vkReducer'
+import vkEffect from '~/effects/vkEffect'
+import vkReducer from '~/reducers/vkReducer'
 
 import './VKButton.css'
 
@@ -26,7 +26,7 @@ const VKButton = ({ url, title, image, noparse }: IVKButtonProps) => {
   const href = `${VK_URL}?${params}`
   const [state, dispatch] = useReducer(vkReducer, { likesCount: null })
   const { likesCount } = state
-  useEffect(() => vkEffect(dispatch), [])
+  useEffect(() => { vkEffect(dispatch) }, [])
   return (
     <a className='VKButton' href={href} target='_blank'>
       <div className='VKButtonLeftPart'>

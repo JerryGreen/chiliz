@@ -2,9 +2,9 @@ import moment from 'moment'
 import { h } from 'preact'
 import { useState } from 'preact/hooks'
 
-import VKButton from 'components/VKButton/VKButton'
+import VKButton from '~/components/VKButton/VKButton'
 
-import urpc from 'assets/urpc.png'
+import urpc from '~/assets/urpc.png'
 
 import './App.css'
 

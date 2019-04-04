@@ -1,0 +1,9 @@
+{
+  "files.exclude": {
+    "lambda": true,
+    ".cache": true
+  },
+  // "search.exclude": {
+  //   "lambda": true
+  // }
+}

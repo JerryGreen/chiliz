@@ -28,3 +28,7 @@ git push
 ## Additional info
 
 * [Domains](wiki/domains.md)
+
+## Known problems
+
+* [Parcel and Babel](wiki/problems/parcel.md)

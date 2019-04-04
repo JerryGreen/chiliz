@@ -1,5 +1,5 @@
 import { h, render } from 'preact'
-import App from 'components/App/App'
+import App from '~/components/App/App'
 
 // interface LocalStorageEmulator {
 //   getItem: Function,
@@ -17,6 +17,6 @@ import App from 'components/App/App'
 // global.localStorage = localStorageMock
 
 it('renders without crashing', () => {
-  // const div = document.createElement('div')
-  // render(<App />, div)
+  const div = document.createElement('div')
+  expect(render(<App />, div)).not.toBe(null)
 })

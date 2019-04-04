@@ -1,6 +1,8 @@
+// import 'babel-polyfill'
+
 import { h, render } from 'preact'
 
-import App from 'components/App/App'
+import App from '~/components/App/App'
 
 import registerServiceWorker from './registerServiceWorker.js'
 

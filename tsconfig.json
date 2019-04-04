@@ -2,33 +2,19 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "*": [
-        "src/*",
-      ]
+      "~/*": ["./src/*"]
     },
     "esModuleInterop": true,
-    "module": "es2015",
+    "module": "commonjs",
     "moduleResolution": "node",
-    // "noUnusedLocals": true,
-    // "noUnusedParameters": true,
     "sourceMap": true,
     "target": "es6",
     "jsx": "react",
-    "jsxFactory": "h",
-    // "lib": [
-    //   "dom",
-    //   "dom.iterable",
-    //   "scripthost",
-    //   "es2015"
-    // ],
-    // "types": [
-    //   "node",
-    //   "jest",
-    // ]
+    "jsxFactory": "h"
   },
   "include": [
     "src/**/*.ts",
-    "src/**/*.tsx",
+    "src/**/*.tsx"
   ],
   "exclude": [
     "node_modules",

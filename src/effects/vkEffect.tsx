@@ -1,4 +1,4 @@
-import { TYPES } from 'reducers/vkReducer'
+import { TYPES } from '~/reducers/vkReducer'
 
 const { REACT_APP_BACKEND_URL } = process.env
 
@@ -12,7 +12,7 @@ const vkEffect = async dispatch => {
   const res = await window.fetch(ENDPOINT).catch(error =>
     dispatch({ type: TYPES.GET_COUNT_FAILURE, payload: { error } })
   )
-  if (!res) return
+  if (!res) { return }
   const resParsed = await res.json()
   const { likesCount } = resParsed
   dispatch({ type: TYPES.GET_COUNT_SUCCESS, payload: { likesCount } })
