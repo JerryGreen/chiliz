@@ -11,12 +11,12 @@ import './App.css'
 // const { REACT_APP_DOMAIN_URL } = process.env
 const image = new URL(urpc, window.location.origin).toString()
 
-const App = () => {
-  const [reminderClosedAt, setreminderClosedAt] = useState(localStorage.getItem('reminderClosedAt'))
+const App = (props: object, state: object) => {
+  const [reminderClosedAt, setReminderClosedAt] = useState(localStorage.getItem('reminderClosedAt'))
   const onClose = () => {
     const now = Date.now().toString()
     localStorage.setItem('reminderClosedAt', now)
-    setreminderClosedAt(now)
+    setReminderClosedAt(now)
   }
   const odd = moment().isoWeek() % 2 === 1
   const chiliz = odd ? 'числитель' : 'знаменатель'

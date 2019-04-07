@@ -1,7 +1,7 @@
-const TYPES = {
-  GET_COUNT_FAILURE: 'GET_COUNT_FAILURE',
-  GET_COUNT_REQUEST: 'GET_COUNT_REQUEST',
-  GET_COUNT_SUCCESS: 'GET_COUNT_SUCCESS',
+export enum TYPES {
+  GET_COUNT_FAILURE = 'GET_COUNT_FAILURE',
+  GET_COUNT_REQUEST = 'GET_COUNT_REQUEST',
+  GET_COUNT_SUCCESS = 'GET_COUNT_SUCCESS',
 }
 
 // enum TYPES {
@@ -13,33 +13,41 @@ const TYPES = {
 // const VK_URL = 'https://vk.com/share.php'
 // const endpoint = `${VK_URL}?act=count&url=${REACT_APP_DOMAIN_URL}`
 
+interface IError {
+  error: string
+}
+
 interface IState {
-  likesCount: number | null
+  likesCount: number
 }
 
-interface IAction {
-  type: string | null,
-  payload: IState
+type Action =
+  {
+    type: TYPES.GET_COUNT_REQUEST,
+  } |
+  {
+    type: TYPES.GET_COUNT_SUCCESS,
+    payload: IState
+  } |
+  {
+    type: TYPES.GET_COUNT_FAILURE,
+    payload: IError
+  }
+
+export type Dispatch = (action: Action) => void
+
+export const initialState: IState = {
+  likesCount: 0
 }
 
-const vkReducer = (state: IState, action: IAction) => {
-  const {
-    type,
-    payload
-  } = action
-  switch (type) {
-    case TYPES.GET_COUNT_FAILURE: {
-      // const { error } = payload
-      // console.error(new Error(error))
-      return {}
-    }
+const vkReducer = (state: IState, action: Action) => {
+  switch (action.type) {
     case TYPES.GET_COUNT_SUCCESS: {
-      const { likesCount } = payload
+      const { likesCount } = action.payload
       return { likesCount }
     }
     default: return {}
   }
 }
 
-export { TYPES }
 export default vkReducer

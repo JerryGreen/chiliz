@@ -1,4 +1,7 @@
-import { TYPES } from '~/reducers/vkReducer'
+import {
+  Dispatch,
+  TYPES
+} from '~/reducers/vkReducer'
 
 const { REACT_APP_BACKEND_URL } = process.env
 
@@ -7,8 +10,8 @@ const { REACT_APP_BACKEND_URL } = process.env
 // const LIKES_URL = 'getChilizVkLikes'
 const ENDPOINT = `${REACT_APP_BACKEND_URL}/getChilizVkLikes`
 
-const vkEffect = async dispatch => {
-  dispatch(TYPES.GET_COUNT_REQUEST)
+const vkEffect = async (dispatch: Dispatch) => {
+  dispatch({ type: TYPES.GET_COUNT_REQUEST })
   const res = await window.fetch(ENDPOINT).catch(error =>
     dispatch({ type: TYPES.GET_COUNT_FAILURE, payload: { error } })
   )

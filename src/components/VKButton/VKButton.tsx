@@ -8,7 +8,7 @@ import isMobile from 'ismobilejs'
 import queryString from 'query-string'
 
 import vkEffect from '~/effects/vkEffect'
-import vkReducer from '~/reducers/vkReducer'
+import vkReducer, { initialState } from '~/reducers/vkReducer'
 
 import './VKButton.css'
 
@@ -24,7 +24,7 @@ interface IVKButtonProps {
 const VKButton = ({ url, title, image, noparse }: IVKButtonProps) => {
   const params = queryString.stringify({ url, title, image, noparse })
   const href = `${VK_URL}?${params}`
-  const [state, dispatch] = useReducer(vkReducer, { likesCount: null })
+  const [state, dispatch] = useReducer(vkReducer, initialState)
   const { likesCount } = state
   useEffect(() => { vkEffect(dispatch) }, [])
   return (

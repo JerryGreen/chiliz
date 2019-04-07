@@ -2,7 +2,7 @@
 
 import { h, render } from 'preact'
 
-import App from '~/components/App/App'
+import Main from '~/components/Main/Main'
 
 import registerServiceWorker from './registerServiceWorker.js'
 
@@ -14,5 +14,5 @@ import './index.css'
 //   }
 // }
 
-render(<App />, document.getElementById('root'))
+render(<Main />, document.getElementById('root'))
 registerServiceWorker()
