@@ -1,5 +1,5 @@
 getChilizVkLikes:
-  handler: src/functions/getChilizVkLikes.handler
+  handler: src/functions/getChilizVkLikes/index.default
   events:
     - http:
       method: get

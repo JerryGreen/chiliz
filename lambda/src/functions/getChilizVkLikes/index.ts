@@ -1,4 +1,16 @@
-import { APIGatewayProxyHandler } from 'aws-lambda'
+import {
+  // APIGatewayProxyHandler
+  Callback
+} from 'aws-lambda'
+interface IHeaders {
+  'Access-Control-Allow-Origin': string
+}
+interface IResponse {
+  body: string,
+  headers: IHeaders,
+  statusCode: number,
+}
+type APIGatewayProxyHandler = (event?: object, context?: object, callback?: Callback) => Promise<IResponse>
 import nodeFetch from 'node-fetch'
 import 'source-map-support/register'
 
@@ -13,14 +25,16 @@ export const getChilizVkLikes: APIGatewayProxyHandler = async () => {
   const body = {
     likesCount
   }
+  // return callback(null, )
   return {
-    statusCode: 200,
+    body: JSON.stringify(body),
     headers: {
       'Access-Control-Allow-Origin': '*'
       // 'Access-Control-Allow-Credentials': true
     },
-    body: JSON.stringify(body)
+    statusCode: 200,
   }
 }
 
-exports.handler = getChilizVkLikes
+// exports.handler = getChilizVkLikes
+export default getChilizVkLikes

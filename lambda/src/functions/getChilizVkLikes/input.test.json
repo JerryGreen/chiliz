@@ -1,0 +1,133 @@
+{
+  "event": {
+    "resource": "/getChilizVkLikes",
+    "path": "/getChilizVkLikes",
+    "httpMethod": "GET",
+    "headers": {
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
+      "Accept-Encoding": "gzip, deflate, br",
+      "Accept-Language": "en-US,en;q=0.9",
+      "cache-control": "max-age=0",
+      "CloudFront-Forwarded-Proto": "https",
+      "CloudFront-Is-Desktop-Viewer": "true",
+      "CloudFront-Is-Mobile-Viewer": "false",
+      "CloudFront-Is-SmartTV-Viewer": "false",
+      "CloudFront-Is-Tablet-Viewer": "false",
+      "CloudFront-Viewer-Country": "RU",
+      "Host": "p7o8ianrwi.execute-api.eu-central-1.amazonaws.com",
+      "upgrade-insecure-requests": "1",
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36",
+      "Via": "2.0 251aba405178d16c89041692c3261a47.cloudfront.net (CloudFront)",
+      "X-Amz-Cf-Id": "X0hhKrSchjTYBdLZtJl41skNLSceGSwIKZZq-9rvJ1liwIZaMLu4eQ==",
+      "X-Amzn-Trace-Id": "Root=1-5c9d1785-33accb65f62a2e10ae1aa481",
+      "X-Forwarded-For": "5.189.62.70, 52.46.36.122",
+      "X-Forwarded-Port": "443",
+      "X-Forwarded-Proto": "https"
+    },
+    "multiValueHeaders": {
+      "Accept": [
+        "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8"
+      ],
+      "Accept-Encoding": [
+        "gzip, deflate, br"
+      ],
+      "Accept-Language": [
+        "en-US,en;q=0.9"
+      ],
+      "cache-control": [
+        "max-age=0"
+      ],
+      "CloudFront-Forwarded-Proto": [
+        "https"
+      ],
+      "CloudFront-Is-Desktop-Viewer": [
+        "true"
+      ],
+      "CloudFront-Is-Mobile-Viewer": [
+        "false"
+      ],
+      "CloudFront-Is-SmartTV-Viewer": [
+        "false"
+      ],
+      "CloudFront-Is-Tablet-Viewer": [
+        "false"
+      ],
+      "CloudFront-Viewer-Country": [
+        "RU"
+      ],
+      "Host": [
+        "p7o8ianrwi.execute-api.eu-central-1.amazonaws.com"
+      ],
+      "upgrade-insecure-requests": [
+        "1"
+      ],
+      "User-Agent": [
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36"
+      ],
+      "Via": [
+        "2.0 251aba405178d16c89041692c3261a47.cloudfront.net (CloudFront)"
+      ],
+      "X-Amz-Cf-Id": [
+        "X0hhKrSchjTYBdLZtJl41skNLSceGSwIKZZq-9rvJ1liwIZaMLu4eQ=="
+      ],
+      "X-Amzn-Trace-Id": [
+        "Root=1-5c9d1785-33accb65f62a2e10ae1aa481"
+      ],
+      "X-Forwarded-For": [
+        "5.189.62.70, 52.46.36.122"
+      ],
+      "X-Forwarded-Port": [
+        "443"
+      ],
+      "X-Forwarded-Proto": [
+        "https"
+      ]
+    },
+    "queryStringParameters": null,
+    "multiValueQueryStringParameters": null,
+    "pathParameters": null,
+    "stageVariables": null,
+    "requestContext": {
+      "resourceId": "rrm2vd",
+      "resourcePath": "/getChilizVkLikes",
+      "httpMethod": "GET",
+      "extendedRequestId": "XRCc6EoNFiAFYDA=",
+      "requestTime": "28/Mar/2019:18:50:45 +0000",
+      "path": "/default/getChilizVkLikes",
+      "accountId": "505844832239",
+      "protocol": "HTTP/1.1",
+      "stage": "default",
+      "domainPrefix": "p7o8ianrwi",
+      "requestTimeEpoch": 1553799045837,
+      "requestId": "654ca89d-518a-11e9-8834-4da2e8f49300",
+      "identity": {
+        "cognitoIdentityPoolId": null,
+        "accountId": null,
+        "cognitoIdentityId": null,
+        "caller": null,
+        "sourceIp": "5.189.123.123",
+        "accessKey": null,
+        "cognitoAuthenticationType": null,
+        "cognitoAuthenticationProvider": null,
+        "userArn": null,
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36",
+        "user": null
+      },
+      "domainName": "p7o8ianrwi.execute-api.eu-central-1.amazonaws.com",
+      "apiId": "p7o8ianrwi"
+    },
+    "body": null,
+    "isBase64Encoded": false
+  },
+  "context": {
+    "callbackWaitsForEmptyEventLoop": true,
+    "logGroupName": "/aws/lambda/aws-nodejs-typescript-default-getChilizVkLikes",
+    "logStreamName": "2019/03/28/[$LATEST]38e45e88e8d44f8abf4e96c8bb27604a",
+    "functionName": "aws-nodejs-typescript-default-getChilizVkLikes",
+    "memoryLimitInMB": "1024",
+    "functionVersion": "$LATEST",
+    "invokeid": "f91e9728-2c0e-42a0-832e-6cd16cca0a84",
+    "awsRequestId": "f91e9728-2c0e-42a0-832e-6cd16cca0a84",
+    "invokedFunctionArn": "arn:aws:lambda:eu-central-1:505844832239:function:aws-nodejs-typescript-default-getChilizVkLikes"
+  }
+}
