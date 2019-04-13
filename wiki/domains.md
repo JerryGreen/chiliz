@@ -2,7 +2,7 @@
 
 Current:
 
-* https://chiliz.ru/
+* https://chiliz.ru/ (it's using [ClouDNS](https://www.cloudns.net/))
 
 Old version:
 
