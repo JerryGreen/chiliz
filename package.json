@@ -33,7 +33,7 @@
     "postbuild": "echo chiliz.ru > docs/CNAME",
     "test": "jest",
     "eject": "preact-scripts-ts eject",
-    "lint": "tsc --noEmit && tslint -c tslint.json 'src/**/*.{ts,tsx}'"
+    "lint": "tsc --noEmit && tslint 'src/**/*.{ts,tsx}'"
   },
   "husky": {
     "hooks": {
