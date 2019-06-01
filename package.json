@@ -1,6 +1,7 @@
 {
   "name": "chiliz",
   "version": "1.0.2",
+  "repository": "https://github.com/JerryGreen/chiliz",
   "dependencies": {
     "@just-boris/preact-scripts": "1.1.4",
     "is-mobile": "2.0.0",

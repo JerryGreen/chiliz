@@ -1,6 +1,5 @@
 // eslint-disable-next-line no-unused-vars
 import { h, Component } from 'preact'
-import { useState } from 'preact/hooks'
 import moment from 'moment'
 import VKButton from 'components/VKButton/VKButton'
 
@@ -11,12 +10,6 @@ import './App.css'
 const image = new window.URL(urpc, window.location.origin)
 
 const App = () => {
-  const [reminderClosedAt, setreminderClosedAt] = useState(localStorage.getItem('reminderClosedAt'))
-  const onClose = () => {
-    const now = window.Date.now()
-    window.localStorage.setItem('reminderClosedAt', now)
-    setreminderClosedAt(now)
-  }
   const odd = moment().isoWeek() % 2 === 1
   const chiliz = odd ? 'числитель' : 'знаменатель'
   const startDay = moment().weekday(1).format('DD/MM')
@@ -27,17 +20,6 @@ const App = () => {
       <a className='contact' href='https://vk.com/write25053099' target='_blank' rel='noopener noreferrer'>
         Обратная связь
       </a>
-      { !reminderClosedAt &&
-        <div className='topHint' onClick={onClose}>
-          <div>
-            {
-              'С прошлого года сайт сломался и всегда показывал противоположное значение. \
-              Будьте внимательны - теперь правильно ;)'
-            }
-          </div>
-          <div className='topHintClose'>(Закрыть)</div>
-        </div>
-      }
       <div className='chiliz'>
         <div className='chilizWrapper'>
           <div className='subtitle'>На этой неделе...</div>

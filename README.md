@@ -4,13 +4,14 @@
 
 ## Requirements
 
-* NodeJS 11.6.0
-* Yarn 1.12.3
+- NodeJS 11.6.0
+- Yarn 1.12.3
 
 ## Setup
 
-```
+```sh
 echo '# override envs here' > .env.local
+nvm install
 yarn
 yarn start
 ```
@@ -19,7 +20,7 @@ yarn start
 
 `master` branch
 
-```
+```sh
 yarn build
 git add .
 git commit
@@ -28,4 +29,4 @@ git push
 
 ## Additional info
 
-* [Domains](wiki/domains.md)
+- [Domains](wiki/domains.md)

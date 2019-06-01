@@ -2,9 +2,9 @@
 
 Current:
 
-* https://chiliz.ru/
+- https://chiliz.ru/
 
 Old version:
 
-* https://chiliz.000webhostapp.com/
-* https://chiliz.000webhostapp.com/tictac/ (bonus)
+- https://chiliz.000webhostapp.com/
+- https://chiliz.000webhostapp.com/tictac/ (bonus)
