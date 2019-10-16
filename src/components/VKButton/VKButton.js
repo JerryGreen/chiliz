@@ -18,7 +18,7 @@ const VKButton = ({ url, title, image, noparse }) => {
   const { likesCount } = state
   useEffect(() => vkEffect(dispatch), [])
   return (
-    <a className='VKButton' href={href} target='_blank'>
+    <a className='VKButton' href={href} target='_blank' rel="noopener noreferrer">
       <div className='VKButtonLeftPart'>
         <div className='VKButtonLogo' />
         <div className='VKButtonText'>Рассказать одногруппникам</div>
