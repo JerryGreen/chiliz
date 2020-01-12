@@ -1,15 +1,16 @@
 import React from 'react'
-import Main from '../layouts/Main'
-
-import VKButton from '../components/VKButton/VKButton'
 import { NextPage } from 'next'
+
+import Main from '../layouts/Main'
+import VKButton from '../components/VKButton/VKButton'
 
 interface Props {
   chiliz: string
+  isMobile: boolean
 }
 
 const Chiliz: NextPage<Props> = props => {
-  const { chiliz = '...' } = props
+  const { chiliz = '...', isMobile = false } = props
   // TODO: return back a remark: (${startDay} - ${endDay})
   const title = `На этой неделе "${chiliz}"!`
   const image = '/urpc.png'
@@ -38,6 +39,7 @@ const Chiliz: NextPage<Props> = props => {
                 url={'https://chiliz.ru/'}
                 title={title}
                 image={image}
+                isMobile={isMobile}
                 noparse
               />
             </div>
@@ -130,14 +132,22 @@ const Chiliz: NextPage<Props> = props => {
 }
 
 Chiliz.getInitialProps = async ctx => {
+  const isServer = typeof window === 'undefined'
+
+  // get week
   const getISOWeek = (await import('date-fns/getISOWeek')).default
-  const date = new Date(ctx.req.headers.date)
+  const date = new Date(isServer ? ctx.req.headers.date : undefined)
   const odd = getISOWeek(date)
   const chiliz = odd ? 'числитель' : 'знаменатель'
+
+  // get isMobile
+  const isMobile = (await import('is-mobile')).isMobile(
+    isServer ? ctx.req.headers['user-agent'] : undefined
+  )
   // TODO: return wrong data when close to the end of week
   // const startDay = moment.weekday(1).format('DD/MM')
   // const endDay = moment.weekday(7).format('DD/MM')
-  return { chiliz }
+  return { chiliz, isMobile }
 }
 
 export default Chiliz

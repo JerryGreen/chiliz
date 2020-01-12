@@ -5,11 +5,17 @@ import queryString from 'query-string'
 import vkReducer from '../../reducers/vkReducer'
 import vkEffect from '../../effects/vkEffect'
 
-const VKButton = props => {
-  const { url, title, image, noparse } = props
-  // TODO: handle `isMobile`
-  // const vkUrl = `${isMobile() ? 'vk' : 'https'}://vk.com/share.php`
-  const vkUrl = 'https://vk.com/share.php'
+interface Props {
+  url: string
+  title: string
+  image: string
+  noparse: boolean
+  isMobile: boolean
+}
+
+const VKButton = (props: Props) => {
+  const { url, title, image, noparse, isMobile } = props
+  const vkUrl = `${isMobile ? 'vk' : 'https'}://vk.com/share.php`
 
   const params = queryString.stringify({ url, title, image, noparse })
   const href = `${vkUrl}?${params}`
