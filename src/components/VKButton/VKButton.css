@@ -23,11 +23,9 @@
   height: 8px;
   width: 16px;
   margin: 0 5px;
-  /* widht: 26px; */
 }
 
 .VKButtonText {
-  /* width: 165px; */
   padding: 2px 0 4px;
 }
 
@@ -49,7 +47,7 @@
 }
 
 .VKButtonCounter::before {
-  content: '';
+  content: "";
   display: block;
   background-size: 19px 59px;
   background-image: url(https://vk.com/images/icons/like_widget_2x.png);

@@ -49,6 +49,83 @@ const App = () => {
         Данные обновляются в 00:00 с наступлением понедельника. Используется
         время, установленное на вашем устройстве
       </div>
+      <style jsx>{`
+        .contact {
+          position: absolute;
+          top: 0;
+          left: 0;
+          padding: 12px;
+        }
+
+        .topHint {
+          position: absolute;
+          top: 0;
+          right: 0;
+          left: 0;
+          padding: 12px;
+          margin: 12px;
+          line-height: 1.5;
+          border-radius: 4px;
+          background-color: #accaee;
+          cursor: pointer;
+        }
+
+        .topHint > div {
+          display: inline;
+        }
+
+        .topHintClose {
+          float: right;
+          color: #285473;
+        }
+
+        .chiliz {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          height: 100%;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: -1;
+        }
+
+        .chilizWrapper {
+          display: flex;
+          height: 60vh;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-evenly;
+        }
+
+        .hint {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          margin: 12px;
+          color: #d4d4d4;
+          font-weight: bold;
+          text-align: center;
+        }
+
+        .title {
+          text-transform: capitalize;
+          font-size: 48px;
+        }
+
+        @media screen and (min-width: 800px) {
+          .title {
+            font-size: 64px;
+          }
+        }
+
+        .subtitle {
+          font-size: 18px;
+        }
+      `}</style>
     </div>
   )
 }

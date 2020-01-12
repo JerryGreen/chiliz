@@ -18,7 +18,7 @@ const Main = ({ children }: Props) => (
         async
         src="https://www.googletagmanager.com/gtag/js?id=UA-137515166-1"
       ></script>
-      <script type="text/javascript" src="/g-analytycs"></script>
+      <script type="text/javascript" src="/g-analytics.js"></script>
       <script type="text/javascript" src="/y-metrika.js"></script>
       <noscript>
         <div>
@@ -33,6 +33,20 @@ const Main = ({ children }: Props) => (
         </div>
       </noscript>
     </Head>
+    <style global jsx>
+      {`
+        body {
+          margin: 0;
+          padding: 0;
+          font-family: Tahoma, Geneva, sans-serif;
+          font-size: 12px;
+        }
+
+        p {
+          margin: 0;
+        }
+      `}
+    </style>
     {children}
   </>
 )
