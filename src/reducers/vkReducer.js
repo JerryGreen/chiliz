@@ -1,7 +1,7 @@
 const TYPES = {
   GET_COUNT_REQUEST: 'GET_COUNT_REQUEST',
   GET_COUNT_SUCCESS: 'GET_COUNT_SUCCESS',
-  GET_COUNT_FAILURE: 'GET_COUNT_FAILURE'
+  GET_COUNT_FAILURE: 'GET_COUNT_FAILURE',
 }
 
 // const { REACT_APP_DOMAIN_URL } = process.env
@@ -22,7 +22,8 @@ const vkReducer = (state, action) => {
       const { likesCount } = payload
       return { likesCount }
     }
-    default: return {}
+    default:
+      return {}
   }
 }
 

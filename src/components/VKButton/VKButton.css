@@ -39,7 +39,7 @@
   color: #55677d;
   height: 22px;
   border: 1px solid #adbdcc;
-  background: #FFF;
+  background: #fff;
   font-size: 11px;
   padding: 2px 5px;
   color: #55677d;
@@ -52,7 +52,7 @@
   content: '';
   display: block;
   background-size: 19px 59px;
-  background-image: url(http://vk.com/images/icons/like_widget_2x.png);
+  background-image: url(https://vk.com/images/icons/like_widget_2x.png);
   background-position: 0 -49px;
   width: 5px;
   height: 10px;
