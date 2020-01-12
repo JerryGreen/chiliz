@@ -1,6 +1,5 @@
 import React from 'react'
 import Main from '../layouts/Main'
-// import moment from 'moment'
 
 import VKButton from '../components/VKButton/VKButton'
 import { NextPage } from 'next'
@@ -131,8 +130,9 @@ const Chiliz: NextPage<Props> = props => {
 }
 
 Chiliz.getInitialProps = async ctx => {
-  const moment = (await import('moment')).default()
-  const odd = moment.isoWeek() % 2 === 1
+  const getISOWeek = (await import('date-fns/getISOWeek')).default
+  const date = new Date(ctx.req.headers.date)
+  const odd = getISOWeek(date)
   const chiliz = odd ? 'числитель' : 'знаменатель'
   // TODO: return wrong data when close to the end of week
   // const startDay = moment.weekday(1).format('DD/MM')
