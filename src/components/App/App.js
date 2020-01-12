@@ -2,8 +2,6 @@ import moment from 'moment'
 
 import VKButton from '../VKButton/VKButton'
 
-// import './App.css'
-
 const App = () => {
   const odd = moment().isoWeek() % 2 === 1
   const chiliz = odd ? 'числитель' : 'знаменатель'

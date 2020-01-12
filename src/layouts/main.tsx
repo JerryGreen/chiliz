@@ -18,8 +18,8 @@ const Main = ({ children }: Props) => (
         async
         src="https://www.googletagmanager.com/gtag/js?id=UA-137515166-1"
       ></script>
-      <script type="text/javascript" src="/g-analytics.js"></script>
-      <script type="text/javascript" src="/y-metrika.js"></script>
+      <script async type="text/javascript" src="/g-analytics.js"></script>
+      <script async type="text/javascript" src="/y-metrika.js"></script>
       <noscript>
         <div>
           <img

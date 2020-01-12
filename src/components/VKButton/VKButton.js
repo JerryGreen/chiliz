@@ -5,8 +5,6 @@ import queryString from 'query-string'
 import vkReducer from '../../reducers/vkReducer'
 import vkEffect from '../../effects/vkEffect'
 
-// import './VKButton.css'
-
 const VKButton = props => {
   const { url, title, image, noparse } = props
   // TODO: handle `isMobile`
