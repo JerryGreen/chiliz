@@ -141,9 +141,9 @@ Chiliz.getInitialProps = async ctx => {
   const chiliz = odd ? 'числитель' : 'знаменатель'
 
   // get isMobile
-  const isMobile = (await import('is-mobile')).isMobile(
-    isServer ? ctx.req.headers['user-agent'] : undefined
-  )
+  const isMobile = (await import('is-mobile')).isMobile({
+    ua: isServer ? ctx.req.headers['user-agent'] : undefined,
+  })
   // TODO: return wrong data when close to the end of week
   // const startDay = moment.weekday(1).format('DD/MM')
   // const endDay = moment.weekday(7).format('DD/MM')
