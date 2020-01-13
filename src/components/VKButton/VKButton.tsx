@@ -15,7 +15,7 @@ interface Props {
 
 const VKButton = (props: Props) => {
   const { url, title, image, noparse, isMobile } = props
-  const vkUrl = `${isMobile ? 'vk' : 'https'}://vk.com/share.php`
+  const vkUrl = `${isMobile ? 'vk:' : 'https:'}//vk.com/share.php`
 
   const params = queryString.stringify({ url, title, image, noparse })
   const href = `${vkUrl}?${params}`

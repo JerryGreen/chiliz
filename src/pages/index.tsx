@@ -153,9 +153,9 @@ Chiliz.getInitialProps = async ctx => {
   const endDay = format(setISODay(date, 7), 'dd MMM', { locale: ru })
 
   // get isMobile
-  const isMobile = (await import('is-mobile')).isMobile(
-    isServer ? { ua: ctx.req.headers['user-agent'] } : undefined
-  )
+  const isMobile = (await import('is-mobile')).isMobile({
+    ua: isServer ? ctx.req.headers['user-agent'] : undefined,
+  })
 
   return { chiliz, isMobile, startDay, endDay }
 }
