@@ -7,12 +7,18 @@ import VKButton from '../components/VKButton/VKButton'
 interface Props {
   chiliz: string
   isMobile: boolean
+  startDay: string
+  endDay: string
 }
 
 const Chiliz: NextPage<Props> = props => {
-  const { chiliz = '...', isMobile = false } = props
-  // TODO: return back a remark: (${startDay} - ${endDay})
-  const title = `На этой неделе "${chiliz}"!`
+  const {
+    chiliz = '...',
+    isMobile = false,
+    startDay = '...',
+    endDay = '...',
+  } = props
+  const title = `"${chiliz}" с ${startDay} по ${endDay}`
   const image =
     typeof window !== 'undefined'
       ? new window.URL('urpc.png', window.location.origin).toString()
@@ -133,20 +139,25 @@ const Chiliz: NextPage<Props> = props => {
 Chiliz.getInitialProps = async ctx => {
   const isServer = typeof window === 'undefined'
 
-  // get week
+  // get week data
   const getISOWeek = (await import('date-fns/getISOWeek')).default
-  const date = new Date(isServer ? ctx.req.headers.date : undefined)
+  const date = new Date(
+    isServer ? ctx.req.headers.date || new Date() : undefined
+  )
   const odd = getISOWeek(date)
-  const chiliz = odd ? 'числитель' : 'знаменатель'
+  const chiliz = odd ? 'Числитель' : 'Знаменатель'
+  const setISODay = (await import('date-fns/setISODay')).default
+  const format = (await import('date-fns/format')).default
+  const ru = (await import('date-fns/locale/ru')).default
+  const startDay = format(setISODay(date, 1), 'dd MMM', { locale: ru })
+  const endDay = format(setISODay(date, 7), 'dd MMM', { locale: ru })
 
   // get isMobile
-  const isMobile = (await import('is-mobile')).isMobile({
-    ua: isServer ? ctx.req.headers['user-agent'] : undefined,
-  })
-  // TODO: return wrong data when close to the end of week
-  // const startDay = moment.weekday(1).format('DD/MM')
-  // const endDay = moment.weekday(7).format('DD/MM')
-  return { chiliz, isMobile }
+  const isMobile = (await import('is-mobile')).isMobile(
+    isServer ? { ua: ctx.req.headers['user-agent'] } : undefined
+  )
+
+  return { chiliz, isMobile, startDay, endDay }
 }
 
 export default Chiliz
