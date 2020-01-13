@@ -13,11 +13,10 @@ const Chiliz: NextPage<Props> = props => {
   const { chiliz = '...', isMobile = false } = props
   // TODO: return back a remark: (${startDay} - ${endDay})
   const title = `На этой неделе "${chiliz}"!`
-  const image = '/urpc.png'
-  // const image =
-  //   typeof window !== 'undefined'
-  //     ? new window.URL('urpc.png', window.location.origin).toString()
-  //     : 'https://chiliz.ru/urpc.png'
+  const image =
+    typeof window !== 'undefined'
+      ? new window.URL('urpc.png', window.location.origin).toString()
+      : 'https://chiliz.ru/urpc.png'
 
   return (
     <Main>
