@@ -30,20 +30,6 @@ const Main = ({ children }: Props) => (
       `}
     </style>
     {children}
-    <img
-      src="https://mc.yandex.ru/watch/23308813"
-      style={{
-        position: 'absolute',
-        left: '-9999px',
-      }}
-      alt=""
-    />
-    <script async src="/g-analytics.js"></script>
-    <script async src="/y-metrika.js"></script>
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-137515166-1"
-    ></script>
   </>
 )
 
