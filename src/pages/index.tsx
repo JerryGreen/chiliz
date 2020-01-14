@@ -1,5 +1,6 @@
 import React from 'react'
 import { NextPage } from 'next'
+import absoluteUrl from 'next-absolute-url'
 
 import Main from '../layouts/Main'
 import VKButton from '../components/VKButton/VKButton'
@@ -9,6 +10,7 @@ interface Props {
   isMobile: boolean
   startDay: string
   endDay: string
+  imageUrl: string
 }
 
 const Chiliz: NextPage<Props> = props => {
@@ -17,12 +19,9 @@ const Chiliz: NextPage<Props> = props => {
     isMobile = false,
     startDay = '...',
     endDay = '...',
+    imageUrl = 'https://chiliz.ru/urpc.png',
   } = props
   const title = `"${chiliz}" с ${startDay} по ${endDay}`
-  const image =
-    typeof window !== 'undefined'
-      ? new window.URL('urpc.png', window.location.origin).toString()
-      : 'https://chiliz.ru/urpc.png'
 
   return (
     <Main>
@@ -43,7 +42,7 @@ const Chiliz: NextPage<Props> = props => {
               <VKButton
                 url={'https://chiliz.ru/'}
                 title={title}
-                image={image}
+                image={imageUrl}
                 isMobile={isMobile}
                 noparse
               />
@@ -157,7 +156,11 @@ Chiliz.getInitialProps = async ctx => {
     ua: isServer ? ctx.req.headers['user-agent'] : undefined,
   })
 
-  return { chiliz, isMobile, startDay, endDay }
+  // get imageUrl
+  const { protocol, host } = absoluteUrl(ctx.req, 'localhost:3000')
+  const imageUrl = `${protocol}//${host}/urpc.png`
+
+  return { chiliz, isMobile, startDay, endDay, imageUrl }
 }
 
 export default Chiliz
