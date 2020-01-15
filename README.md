@@ -4,27 +4,15 @@
 
 ## Requirements
 
-- NodeJS 11.6.0
-- Yarn 1.12.3
+- NodeJS 12.14.1
+- Yarn 1.21.1
 
 ## Setup
 
 ```sh
-echo '# override envs here' > .env.local
 nvm install
 yarn
-yarn start
-```
-
-## Deploy
-
-`master` branch
-
-```sh
-yarn build
-git add .
-git commit
-git push
+yarn dev
 ```
 
 ## Additional info
