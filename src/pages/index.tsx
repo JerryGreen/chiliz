@@ -1,27 +1,33 @@
 import React from 'react'
 import { NextPage } from 'next'
 import absoluteUrl from 'next-absolute-url'
+import getISOWeek from 'date-fns/getISOWeek'
+import setISODay from 'date-fns/setISODay'
+import format from 'date-fns/format'
+import ru from 'date-fns/locale/ru'
 
 import Main from '../layouts/Main'
 import VKButton from '../components/VKButton/VKButton'
 
 interface Props {
-  chiliz: string
   isMobile: boolean
-  startDay: string
-  endDay: string
   imageUrl: string
 }
 
+const getChiliz = () => {
+  const isServer = typeof window === 'undefined'
+  if (isServer) return {}
+  const date = new Date()
+  const odd = getISOWeek(date)
+  const title = odd ? 'Числитель' : 'Знаменатель'
+  const startDay = format(setISODay(date, 1), 'dd MMM', { locale: ru })
+  const endDay = format(setISODay(date, 7), 'dd MMM', { locale: ru })
+  return { title, startDay, endDay }
+}
+
 const Chiliz: NextPage<Props> = props => {
-  const {
-    chiliz = '...',
-    isMobile = false,
-    startDay = '...',
-    endDay = '...',
-    imageUrl = 'https://chiliz.ru/urpc.png',
-  } = props
-  const title = `"${chiliz}" с ${startDay} по ${endDay}`
+  const { isMobile = false, imageUrl = 'https://chiliz.ru/urpc.png' } = props
+  const { title = '...', startDay = '...', endDay = '...' } = getChiliz()
 
   return (
     <Main>
@@ -30,18 +36,18 @@ const Chiliz: NextPage<Props> = props => {
           className="contact"
           href="https://vk.com/write25053099"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noopener"
         >
           Обратная связь
         </a>
         <div className="chiliz">
           <div className="chilizWrapper">
             <div className="subtitle">На этой неделе...</div>
-            <div className="title">{chiliz}</div>
+            <div className="title">{title}</div>
             <div className="share">
               <VKButton
                 url={'https://chiliz.ru/'}
-                title={title}
+                title={`"${title}" с ${startDay} по ${endDay}`}
                 image={imageUrl}
                 isMobile={isMobile}
                 noparse
@@ -138,19 +144,6 @@ const Chiliz: NextPage<Props> = props => {
 Chiliz.getInitialProps = async ctx => {
   const isServer = typeof window === 'undefined'
 
-  // get week data
-  const getISOWeek = (await import('date-fns/getISOWeek')).default
-  const date = new Date(
-    isServer ? ctx.req.headers.date || new Date() : undefined
-  )
-  const odd = getISOWeek(date)
-  const chiliz = odd ? 'Числитель' : 'Знаменатель'
-  const setISODay = (await import('date-fns/setISODay')).default
-  const format = (await import('date-fns/format')).default
-  const ru = (await import('date-fns/locale/ru')).default
-  const startDay = format(setISODay(date, 1), 'dd MMM', { locale: ru })
-  const endDay = format(setISODay(date, 7), 'dd MMM', { locale: ru })
-
   // get isMobile
   const isMobile = (await import('is-mobile')).isMobile({
     ua: isServer ? ctx.req.headers['user-agent'] : undefined,
@@ -160,7 +153,7 @@ Chiliz.getInitialProps = async ctx => {
   const { protocol, host } = absoluteUrl(ctx.req, 'localhost:3000')
   const imageUrl = `${protocol}//${host}/urpc.png`
 
-  return { chiliz, isMobile, startDay, endDay, imageUrl }
+  return { isMobile, imageUrl }
 }
 
 export default Chiliz

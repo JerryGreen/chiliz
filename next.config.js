@@ -1,14 +1,14 @@
 const withOffline = require('next-offline')
 
+const { ANALYZE, NEXT_EXPORT } = process.env
+
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
+  enabled: ANALYZE === 'true',
 })
 
 const nextConfig = {
   workboxOpts: {
-    swDest: process.env.NEXT_EXPORT
-      ? 'service-worker.js'
-      : 'static/service-worker.js',
+    swDest: NEXT_EXPORT ? 'service-worker.js' : 'static/service-worker.js',
     runtimeCaching: [
       {
         urlPattern: /^https?.*/,
