@@ -21,15 +21,10 @@ const VKButton = (props: Props) => {
   const href = `${vkUrl}?${params}`
   const [state, dispatch] = useReducer(vkReducer, { likesCount: null })
   const { likesCount } = state
-  vkEffect(dispatch)
+  vkEffect(dispatch, [url, title, image, noparse, isMobile])
   return (
     <>
-      <a
-        className="VKButton"
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <a className="VKButton" href={href} target="_blank" rel="noopener">
         <div className="VKButtonLeftPart">
           <div className="VKButtonLogo" />
           <div className="VKButtonText">Рассказать одногруппникам</div>
