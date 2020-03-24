@@ -18,7 +18,7 @@ const getChiliz = () => {
   const isServer = typeof window === 'undefined'
   if (isServer) return {}
   const date = new Date()
-  const odd = getISOWeek(date)
+  const odd = getISOWeek(date) % 2
   const title = odd ? 'Числитель' : 'Знаменатель'
   const startDay = format(setISODay(date, 1), 'dd MMM', { locale: ru })
   const endDay = format(setISODay(date, 7), 'dd MMM', { locale: ru })
